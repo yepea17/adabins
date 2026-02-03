@@ -3463,7 +3463,6 @@
 2011_09_30/2011_09_30_drive_0028_sync/image_02/data/0000004058.png 2011_09_30_drive_0028_sync/proj_depth/groundtruth/image_02/0000004058.png 707.0912
 2011_09_26/2011_09_26_drive_0051_sync/image_02/data/0000000359.png 2011_09_26_drive_0051_sync/proj_depth/groundtruth/image_02/0000000359.png 721.5377
 2011_09_30/2011_09_30_drive_0028_sync/image_02/data/0000002319.png 2011_09_30_drive_0028_sync/proj_depth/groundtruth/image_02/0000002319.png 707.0912
-2011_09_26/2011_09_26_drive_0051_sync/image_02/data/0000000389.png 2011_09_26_drive_0051_sync/proj_depth/groundtruth/image_02/0000000389.png 721.5377
 2011_09_26/2011_09_26_drive_0035_sync/image_02/data/0000000087.png 2011_09_26_drive_0035_sync/proj_depth/groundtruth/image_02/0000000087.png 721.5377
 2011_09_30/2011_09_30_drive_0034_sync/image_02/data/0000000878.png 2011_09_30_drive_0034_sync/proj_depth/groundtruth/image_02/0000000878.png 707.0912
 2011_09_30/2011_09_30_drive_0028_sync/image_02/data/0000000904.png 2011_09_30_drive_0028_sync/proj_depth/groundtruth/image_02/0000000904.png 707.0912
@@ -6988,7 +6987,6 @@
 2011_10_03/2011_10_03_drive_0034_sync/image_02/data/0000004420.png 2011_10_03_drive_0034_sync/proj_depth/groundtruth/image_02/0000004420.png 718.856
 2011_10_03/2011_10_03_drive_0034_sync/image_02/data/0000001502.png 2011_10_03_drive_0034_sync/proj_depth/groundtruth/image_02/0000001502.png 718.856
 2011_09_26/2011_09_26_drive_0032_sync/image_02/data/0000000182.png 2011_09_26_drive_0032_sync/proj_depth/groundtruth/image_02/0000000182.png 721.5377
-2011_09_26/2011_09_26_drive_0039_sync/image_02/data/0000000332.png 2011_09_26_drive_0039_sync/proj_depth/groundtruth/image_02/0000000332.png 721.5377
 2011_09_30/2011_09_30_drive_0033_sync/image_02/data/0000001178.png 2011_09_30_drive_0033_sync/proj_depth/groundtruth/image_02/0000001178.png 707.0912
 2011_09_26/2011_09_26_drive_0057_sync/image_02/data/0000000334.png 2011_09_26_drive_0057_sync/proj_depth/groundtruth/image_02/0000000334.png 721.5377
 2011_09_30/2011_09_30_drive_0034_sync/image_02/data/0000000730.png 2011_09_30_drive_0034_sync/proj_depth/groundtruth/image_02/0000000730.png 707.0912
@@ -12925,7 +12923,6 @@
 2011_09_30/2011_09_30_drive_0028_sync/image_02/data/0000004061.png 2011_09_30_drive_0028_sync/proj_depth/groundtruth/image_02/0000004061.png 707.0912
 2011_09_30/2011_09_30_drive_0028_sync/image_02/data/0000003802.png 2011_09_30_drive_0028_sync/proj_depth/groundtruth/image_02/0000003802.png 707.0912
 2011_09_26/2011_09_26_drive_0005_sync/image_02/data/0000000110.png 2011_09_26_drive_0005_sync/proj_depth/groundtruth/image_02/0000000110.png 721.5377
-2011_09_26/2011_09_26_drive_0057_sync/image_02/data/0000000215.png 2011_09_26_drive_0057_sync/proj_depth/groundtruth/image_02/0000000215.png 721.5377
 2011_09_26/2011_09_26_drive_0014_sync/image_02/data/0000000271.png 2011_09_26_drive_0014_sync/proj_depth/groundtruth/image_02/0000000271.png 721.5377
 2011_10_03/2011_10_03_drive_0034_sync/image_02/data/0000000016.png 2011_10_03_drive_0034_sync/proj_depth/groundtruth/image_02/0000000016.png 718.856
 2011_09_26/2011_09_26_drive_0015_sync/image_02/data/0000000152.png 2011_09_26_drive_0015_sync/proj_depth/groundtruth/image_02/0000000152.png 721.5377
@@ -18502,7 +18499,6 @@
 2011_09_26/2011_09_26_drive_0005_sync/image_02/data/0000000131.png 2011_09_26_drive_0005_sync/proj_depth/groundtruth/image_02/0000000131.png 721.5377
 2011_09_30/2011_09_30_drive_0028_sync/image_02/data/0000003008.png 2011_09_30_drive_0028_sync/proj_depth/groundtruth/image_02/0000003008.png 707.0912
 2011_09_30/2011_09_30_drive_0028_sync/image_02/data/0000003761.png 2011_09_30_drive_0028_sync/proj_depth/groundtruth/image_02/0000003761.png 707.0912
-2011_09_26/2011_09_26_drive_0028_sync/image_02/data/0000000006.png 2011_09_26_drive_0028_sync/proj_depth/groundtruth/image_02/0000000006.png 721.5377
 2011_10_03/2011_10_03_drive_0034_sync/image_02/data/0000000150.png 2011_10_03_drive_0034_sync/proj_depth/groundtruth/image_02/0000000150.png 718.856
 2011_09_30/2011_09_30_drive_0028_sync/image_02/data/0000001884.png 2011_09_30_drive_0028_sync/proj_depth/groundtruth/image_02/0000001884.png 707.0912
 2011_09_30/2011_09_30_drive_0028_sync/image_02/data/0000004761.png 2011_09_30_drive_0028_sync/proj_depth/groundtruth/image_02/0000004761.png 707.0912
@@ -20623,7 +20619,6 @@
 2011_09_30/2011_09_30_drive_0028_sync/image_02/data/0000003965.png 2011_09_30_drive_0028_sync/proj_depth/groundtruth/image_02/0000003965.png 707.0912
 2011_09_30/2011_09_30_drive_0028_sync/image_02/data/0000004948.png 2011_09_30_drive_0028_sync/proj_depth/groundtruth/image_02/0000004948.png 707.0912
 2011_09_30/2011_09_30_drive_0028_sync/image_02/data/0000002064.png 2011_09_30_drive_0028_sync/proj_depth/groundtruth/image_02/0000002064.png 707.0912
-2011_09_26/2011_09_26_drive_0019_sync/image_02/data/0000000028.png 2011_09_26_drive_0019_sync/proj_depth/groundtruth/image_02/0000000028.png 721.5377
 2011_09_26/2011_09_26_drive_0057_sync/image_02/data/0000000251.png 2011_09_26_drive_0057_sync/proj_depth/groundtruth/image_02/0000000251.png 721.5377
 2011_10_03/2011_10_03_drive_0034_sync/image_02/data/0000004028.png 2011_10_03_drive_0034_sync/proj_depth/groundtruth/image_02/0000004028.png 718.856
 2011_09_30/2011_09_30_drive_0033_sync/image_02/data/0000000407.png 2011_09_30_drive_0033_sync/proj_depth/groundtruth/image_02/0000000407.png 707.0912

@@ -3,6 +3,7 @@ import os
 import sys
 import uuid
 from datetime import datetime as dt
+import matplotlib
 
 import numpy as np
 import torch
@@ -21,16 +22,15 @@ from dataloader import DepthDataLoader
 from loss import SILogLoss, BinsChamferLoss
 from utils import RunningAverage, colorize
 
+# backpropagation중에 NaN이나 Inf가 발생했을 때 에러 위치 추적
+torch.autograd.set_detect_anomaly(True)
+
 # os.environ['WANDB_MODE'] = 'dryrun'
 PROJECT = "MDE-AdaBins"
 logging = True
 
-
 def is_rank_zero(args):
     return args.rank == 0
-
-
-import matplotlib
 
 
 def colorize(value, vmin=10, vmax=1000, cmap='plasma'):
@@ -108,6 +108,7 @@ def main_worker(gpu, ngpus_per_node, args):
           experiment_name=args.name, optimizer_state_dict=None)
 
 
+# train 함수
 def train(model, args, epochs=10, experiment_name="DeepLab", lr=0.0001, root=".", device=None,
           optimizer_state_dict=None):
     global PROJECT
@@ -128,7 +129,7 @@ def train(model, args, epochs=10, experiment_name="DeepLab", lr=0.0001, root="."
         wandb.init(project=PROJECT, name=name, config=args, dir=args.root, tags=tags, notes=args.notes)
         # wandb.watch(model)
     ################################################################################################
-
+    
     train_loader = DepthDataLoader(args, 'train').data
     test_loader = DepthDataLoader(args, 'online_eval').data
 
@@ -157,7 +158,9 @@ def train(model, args, epochs=10, experiment_name="DeepLab", lr=0.0001, root="."
     iters = len(train_loader)
     step = args.epoch * iters
     best_loss = np.inf
-
+    # ites : 1 epoch당 batch 개수 ex) 16000장(전체) / 16(batch size) = 1000
+    # step : 현재까지 진행된 총 업데이트 횟수
+    # 지금까지 기록된 가장 낮은(좋은) 검증 손실값 -> 갱신
     ###################################### Scheduler ###############################################
     scheduler = optim.lr_scheduler.OneCycleLR(optimizer, lr, epochs=epochs, steps_per_epoch=len(train_loader),
                                               cycle_momentum=True,
@@ -213,7 +216,7 @@ def train(model, args, epochs=10, experiment_name="DeepLab", lr=0.0001, root="."
                 model.eval()
                 metrics, val_si = validate(args, model, test_loader, criterion_ueff, epoch, epochs, device)
 
-                # print("Validated: {}".format(metrics))
+                print("Validated: {}".format(metrics))
                 if should_log:
                     wandb.log({
                         f"Test/{criterion_ueff.name}": val_si.get_value(),
@@ -246,7 +249,7 @@ def validate(args, model, test_loader, criterion_ueff, epoch, epochs, device='cp
             if 'has_valid_depth' in batch:
                 if not batch['has_valid_depth']:
                     continue
-            depth = depth.squeeze().unsqueeze(0).unsqueeze(0)
+            depth = depth.squeeze().unsqueeze(0).unsqueeze(0) # (1, 1, H, W)
             bins, pred = model(img)
 
             mask = depth > args.min_depth
@@ -254,6 +257,8 @@ def validate(args, model, test_loader, criterion_ueff, epoch, epochs, device='cp
             val_si.append(l_dense.item())
 
             pred = nn.functional.interpolate(pred, depth.shape[-2:], mode='bilinear', align_corners=True)
+
+            # print("after interpolate pred min/max:", pred.min().item(), pred.max().item())
 
             pred = pred.squeeze().cpu().numpy()
             pred[pred < args.min_depth_eval] = args.min_depth_eval
@@ -297,7 +302,7 @@ if __name__ == '__main__':
                                      conflict_handler='resolve')
     parser.convert_arg_line_to_args = convert_arg_line_to_args
     parser.add_argument('--epochs', default=25, type=int, help='number of total epochs to run')
-    parser.add_argument('--n-bins', '--n_bins', default=80, type=int,
+    parser.add_argument('--n-bins', '--n_bins', default=256, type=int,
                         help='number of bins/buckets to divide depth range into')
     parser.add_argument('--lr', '--learning-rate', default=0.000357, type=float, help='max learning rate')
     parser.add_argument('--wd', '--weight-decay', default=0.1, type=float, help='weight decay')
@@ -325,9 +330,9 @@ if __name__ == '__main__':
     parser.add_argument("--workers", default=11, type=int, help="Number of workers for data loading")
     parser.add_argument("--dataset", default='nyu', type=str, help="Dataset to train on")
 
-    parser.add_argument("--data_path", default='../dataset/nyu/sync/', type=str,
+    parser.add_argument("--data_path", default='./dataset/nyu/sync/', type=str,
                         help="path to dataset")
-    parser.add_argument("--gt_path", default='../dataset/nyu/sync/', type=str,
+    parser.add_argument("--gt_path", default='./dataset/nyu/sync/', type=str,
                         help="path to dataset")
 
     parser.add_argument('--filenames_file',
@@ -348,9 +353,9 @@ if __name__ == '__main__':
                         action='store_true')
 
     parser.add_argument('--data_path_eval',
-                        default="../dataset/nyu/official_splits/test/",
+                        default="./dataset/nyu/official_splits/test/",
                         type=str, help='path to the data for online evaluation')
-    parser.add_argument('--gt_path_eval', default="../dataset/nyu/official_splits/test/",
+    parser.add_argument('--gt_path_eval', default="./dataset/nyu/official_splits/test/",
                         type=str, help='path to the groundtruth data for online evaluation')
     parser.add_argument('--filenames_file_eval',
                         default="./train_test_inputs/nyudepthv2_test_files_with_gt.txt",

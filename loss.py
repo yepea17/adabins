@@ -16,6 +16,9 @@ class SILogLoss(nn.Module):  # Main loss function used in AdaBins paper
         if mask is not None:
             input = input[mask]
             target = target[mask]
+
+        # alpha = 1e-3
+        # g = torch.log(alpha + input) - torch.log(alpha + target)
         g = torch.log(input) - torch.log(target)
         # n, c, h, w = g.shape
         # norm = 1/(h*w)

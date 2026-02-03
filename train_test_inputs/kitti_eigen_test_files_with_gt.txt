@@ -98,7 +98,6 @@
 2011_09_26/2011_09_26_drive_0020_sync/image_02/data/0000000051.png 2011_09_26_drive_0020_sync/proj_depth/groundtruth/image_02/0000000051.png 721.5377
 2011_09_26/2011_09_26_drive_0020_sync/image_02/data/0000000054.png 2011_09_26_drive_0020_sync/proj_depth/groundtruth/image_02/0000000054.png 721.5377
 2011_09_26/2011_09_26_drive_0020_sync/image_02/data/0000000042.png 2011_09_26_drive_0020_sync/proj_depth/groundtruth/image_02/0000000042.png 721.5377
-2011_09_26/2011_09_26_drive_0023_sync/image_02/data/0000000018.png 2011_09_26_drive_0023_sync/proj_depth/groundtruth/image_02/0000000018.png 721.5377
 2011_09_26/2011_09_26_drive_0023_sync/image_02/data/0000000090.png 2011_09_26_drive_0023_sync/proj_depth/groundtruth/image_02/0000000090.png 721.5377
 2011_09_26/2011_09_26_drive_0023_sync/image_02/data/0000000126.png 2011_09_26_drive_0023_sync/proj_depth/groundtruth/image_02/0000000126.png 721.5377
 2011_09_26/2011_09_26_drive_0023_sync/image_02/data/0000000378.png 2011_09_26_drive_0023_sync/proj_depth/groundtruth/image_02/0000000378.png 721.5377
@@ -275,7 +274,6 @@
 2011_09_26/2011_09_26_drive_0056_sync/image_02/data/0000000242.png 2011_09_26_drive_0056_sync/proj_depth/groundtruth/image_02/0000000242.png 721.5377
 2011_09_26/2011_09_26_drive_0056_sync/image_02/data/0000000253.png 2011_09_26_drive_0056_sync/proj_depth/groundtruth/image_02/0000000253.png 721.5377
 2011_09_26/2011_09_26_drive_0056_sync/image_02/data/0000000286.png 2011_09_26_drive_0056_sync/proj_depth/groundtruth/image_02/0000000286.png 721.5377
-2011_09_26/2011_09_26_drive_0056_sync/image_02/data/0000000154.png 2011_09_26_drive_0056_sync/proj_depth/groundtruth/image_02/0000000154.png 721.5377
 2011_09_26/2011_09_26_drive_0056_sync/image_02/data/0000000099.png 2011_09_26_drive_0056_sync/proj_depth/groundtruth/image_02/0000000099.png 721.5377
 2011_09_26/2011_09_26_drive_0056_sync/image_02/data/0000000220.png 2011_09_26_drive_0056_sync/proj_depth/groundtruth/image_02/0000000220.png 721.5377
 2011_09_26/2011_09_26_drive_0056_sync/image_02/data/0000000022.png 2011_09_26_drive_0056_sync/proj_depth/groundtruth/image_02/0000000022.png 721.5377
